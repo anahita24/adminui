@@ -70,7 +70,7 @@ const TableRow=(props)=>{
      let checklist=[...props.allchecked]
      if(checklist.includes(id))
      {
-        let val= checklist.findIndex(element=>(element==id))
+        let val= checklist.findIndex(element=>(element===id))
         checklist.splice(val,1);
      }
      else
