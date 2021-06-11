@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Pageval from "./pageval.js";
 import TableRow from "./tablerow.js"
+//import 'bootstrap/dist/css/bootstrap.css';
 import Delete from "./delete.js"
 const Admin=(props)=>{
         const [pageno,setPageno]=useState(1);
@@ -16,9 +17,11 @@ const Admin=(props)=>{
                 setheadcheck(false);
                 setallchecked([]);
         },[props.displayelements])
+        
         useEffect(function(){
+                var pg=pageno;
                 //console.log(props.displayelements);
-                let elementsofpage1=props.displayelements.filter((element,index)=>{return index>=(pagination*(pageno-1)) && index<(pagination*pageno)})
+                let elementsofpage1=props.displayelements.filter((element,index)=>{return index>=(pagination*(pg-1)) && index<(pagination*pg)})
                 setElementsofpage(elementsofpage1);
                 setheadcheck(false);
         },[pageno])
@@ -54,7 +57,7 @@ const Admin=(props)=>{
                 setheadcheck(false);     
         }
         }
-        return (<><table class="table">
+        return (<><table className="table">
 <thead><tr><th><input type="checkbox" checked={headcheck} onClick={()=>selectall(elementsofpage)}></input></th>
     <th>Name</th><th>Email</th><th>Role</th><th>Actions</th></tr></thead>
      <tbody>{elementsofpage.map(element=>{ 

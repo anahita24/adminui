@@ -1,8 +1,10 @@
 import React,{useEffect,useState} from "react"
 import './App.css';
-import 'bootstrap/dist/css/bootstrap.css';
 import Admin from './components/admin.js';
-import SearchBox from './components/searchBox.js'
+import SearchBox from './components/searchBox.js';
+import 'bootstrap/dist/css/bootstrap.css';
+
+
 function App() {
   const [element,setElement]=useState([]);
   const [searchval,setSearchval]=useState("");

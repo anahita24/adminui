@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect,useState } from "react"
 const TableRow=(props)=>{
     const [editpressed,setEditpressed]=useState(false);
     const [tempname,setTempname]=useState(props.element.name);
@@ -18,7 +18,8 @@ const TableRow=(props)=>{
    }
    else
    bgcolor.current.style.background="white"
-    },[[],props.allchecked])
+    },[[],props.allchecked,checked,props.element.id])
+    
     function changename(event)
     {
         setTempname(event.target.value);

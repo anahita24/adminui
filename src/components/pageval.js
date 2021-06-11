@@ -21,12 +21,12 @@ const Pageval=(props)=>
     props.setPageno(parseInt(props.pageno)+parseInt(1))
     }
     if(props.lastindex!==0)
-return (<ul><li class="glyphicon glyphicon-chevron-left btn-sm btn-info" onClick={()=>props.setPageno(1)}></li><li onClick={pageminus} class="glyphicon glyphicon-chevron-left btn-sm btn-info	
-"></li>
+return (<ul class="list-group list-group-horizontal-sm">
+    <li class="glyphicon glyphicon-chevron-left btn-sm btn-info" onClick={()=>props.setPageno(1)}></li>
+    <li onClick={pageminus} class="glyphicon glyphicon-chevron-left btn-sm btn-info "></li>
     {listpage.map((element)=>{
         return (<li class="btn btn-info" key={element} id={element} onClick={(event)=>changepage(event)}>{element}</li>)})}
-        <li onClick={pageplus} class="glyphicon glyphicon-chevron-right	btn-sm btn-info
-"></li>
+        <li onClick={pageplus} class="glyphicon glyphicon-chevron-right	btn-sm btn-info"></li>
 <li class="glyphicon glyphicon-chevron-right btn-sm btn-info" onClick={()=>props.setPageno(parseInt(props.lastindex/props.pagination+0.9))}>
     </li></ul>)
 else
